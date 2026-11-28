@@ -61,8 +61,6 @@ function panel() {
 }
 const VIEW = {
   home: () => `<section class="relative flex flex-col justify-end overflow-hidden min-h-[560px] lg:h-[808px]" style="background:url(img/hero.jpg) center/cover,radial-gradient(circle at 55% 40%,#3b4a58,#2c3844 65%);color:#fff">
- <div class="absolute left-5 lg:left-[60px] top-8 lg:top-12"><i style="font:700 34px Caveat,cursive;color:var(--g2)">miskshi presents</i><h1 class="d m-0 text-[clamp(28px,5vw,64px)] leading-none normal-case" style="color:var(--g2)">The Miscelenious Shirt</h1></div>
- <div class="absolute right-5 lg:right-[60px] bottom-20 text-right"><i style="font:700 34px Caveat,cursive;color:var(--g2)">Designed with</i><div class="d text-[clamp(28px,5vw,64px)] normal-case" style="color:var(--g2)">Tren Tech</div></div>
  <div class="flex justify-between px-5 lg:px-[60px] py-4 font-medium text-sm lg:text-base relative"><span>30-day returns</span><span>Cash On Delivery</span><span>Free shipping over 999</span></div></section>
  <section class="grid md:grid-cols-2">${[
    [
