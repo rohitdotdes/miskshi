@@ -1,0 +1,370 @@
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --mut: #6b6b6b;
+  --ph: #e9e9e9;
+  --ln: #e2e2e2;
+  --fld: #e8e8e8;
+  --g: #34d44b;
+  --g2: #47e344;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+#pm {
+  display: none;
+}
+#pm.on {
+  display: block;
+}
+#sw2 {
+  width: 40px;
+  height: 22px;
+  border-radius: 99px;
+  background: #cfcfcf;
+  position: relative;
+  transition: 0.2s;
+}
+#sw2 b {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.2s;
+}
+:root[data-theme="dark"] #sw2 {
+  background: var(--g);
+}
+:root[data-theme="dark"] #sw2 b {
+  transform: translateX(18px);
+}
+:root[data-theme="dark"] .ch {
+  border-color: var(--ln);
+}
+:root[data-theme="dark"] {
+  --bg: #0f1214;
+  --fg: #f2f2f2;
+  --mut: #9aa0a6;
+  --ph: #23282c;
+  --ln: #2d3338;
+  --fld: #1d2226;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font:
+    400 16px Inter,
+    system-ui,
+    sans-serif;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  z-index: 60;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+#top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 40;
+  background: var(--bg);
+}
+.d {
+  font-family: Unbounded, Inter, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.ph {
+  background: var(--ph);
+  border-radius: 8px;
+}
+.nv {
+  height: 59px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+.nv.on {
+  text-decoration: underline;
+  text-decoration-color: var(--g);
+  text-underline-offset: 4px;
+}
+#mega {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 59px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--ln);
+  padding: 32px 60px 30px;
+}
+#mega.on {
+  display: flex;
+  gap: 130px;
+}
+#mega h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+#mega a {
+  display: block;
+  margin-bottom: 20px;
+}
+.ch {
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: var(--bg);
+  padding: 0 19px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 15px;
+}
+.ch.on {
+  border: 1.5px solid var(--fg);
+}
+.ch.sel {
+  background: var(--fg);
+  color: var(--bg);
+}
+.btn {
+  height: 56px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1.5px solid var(--fg);
+  background: transparent;
+}
+.btn.g {
+  background: var(--g);
+  border-color: var(--g);
+  color: #0b240f;
+}
+.tile .h {
+  opacity: 0;
+  transition: 0.2s;
+}
+.tile:hover .h {
+  opacity: 1;
+}
+#sp {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+#sp.on {
+  pointer-events: auto;
+}
+#sp .sc {
+  position: absolute;
+  inset: 0;
+  background: #0009;
+  opacity: 0;
+  transition: 0.3s;
+}
+#sp.on .sc {
+  opacity: 1;
+}
+#sp aside {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(440px, 100%);
+  background: var(--bg);
+  padding: 48px 40px;
+  transform: translateX(100%);
+  transition: 0.35s;
+}
+#sp.on aside {
+  transform: none;
+}
+.fld {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--fld);
+  border: 0;
+  padding: 0 14px;
+  margin: 6px 0 20px;
+}
+#lk {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: #0c1410;
+  color: #fff;
+  overflow: auto;
+  transform: translateY(-101%);
+  transition: transform 0.45s cubic-bezier(0.7, 0, 0.2, 1);
+}
+#lk.on {
+  transform: none;
+}
+.lq {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12vh 24px 40px;
+  animation: dn 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+@keyframes dn {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+.lc {
+  border: 1.5px solid #ffffff40;
+  border-radius: 999px;
+  padding: 12px 22px;
+  margin: 0 10px 10px 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.15s;
+}
+.lc:hover {
+  border-color: var(--g2);
+}
+.lc.on {
+  background: var(--g2);
+  color: #000;
+  border-color: var(--g2);
+}
+.sl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12.5%;
+  background: var(--g2);
+  transform: translateY(-101%);
+  animation: sl 0.75s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+}
+@keyframes sl {
+  0% {
+    transform: translateY(-101%);
+  }
+  45%,
+  55% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(101%);
+  }
+}
+.fl {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  pointer-events: none;
+  animation: fl 0.75s both;
+}
+@keyframes fl {
+  0%,
+  35% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.pz {
+  width: min(360px, 88vw);
+  margin: 0 auto;
+  border: 2px solid var(--rc);
+  border-radius: 12px;
+  padding: 16px;
+  background: #111a15;
+  animation:
+    drop 0.6s 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both,
+    pu 1.6s 1.1s infinite;
+}
+@keyframes drop {
+  from {
+    transform: translateY(-130%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes pu {
+  50% {
+    box-shadow: 0 0 70px var(--rc);
+  }
+  0%,
+  100% {
+    box-shadow: 0 0 25px var(--rc);
+  }
+}
+.bar {
+  height: 4px;
+  background: #ffffff25;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--g2);
+  animation: bw 2.4s linear forwards;
+}
+@keyframes bw {
+  to {
+    width: 100%;
+  }
+}
+#ts {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 120px);
+  background: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 80;
+  transition: 0.3s;
+  font-weight: 500;
+}
+#ts.on {
+  transform: translate(-50%, 0);
+}

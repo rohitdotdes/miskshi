@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>miskshi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="top" onmouseleave="mg()">
+  <header class="flex items-center justify-between gap-3 px-5 lg:px-[60px] h-[59px]">
+    <div class="flex items-center gap-4 lg:gap-[68px]">
+      <button data-a="menu" class="bg-transparent border-0 p-0 font-medium">☰</button>
+      <nav class="hidden lg:flex gap-[23px]" id="nav"><span class="nv" data-n="Men">Men</span><span class="nv" data-n="Women">Women</span><span class="nv" data-n="Collections">Collections</span><span class="nv" data-n="Accessories">Accessories</span></nav>
+    </div>
+    <a href="#home" class="d lg:absolute lg:left-1/2 lg:-translate-x-1/2" style="color:var(--g);font-size:22px;letter-spacing:-.06em;text-transform:lowercase">miskshi</a>
+    <div class="flex items-center gap-4 lg:gap-[38px]">
+      <input id="q" placeholder="Search" class="hidden md:block w-[274px] h-8 rounded px-2.5 border-0" style="background:var(--fld)">
+      <div class="flex gap-5 lg:gap-7 font-medium whitespace-nowrap"><button data-a="wish" class="bg-transparent border-0 p-0" id="hw">♡</button><div id="pw" class="relative"><button data-a="pm" class="bg-transparent border-0 p-0">Profile ▾</button><div id="pm" class="absolute right-0 top-9 rounded-lg p-2 min-w-[200px]" style="background:var(--bg);border:1px solid var(--ln);box-shadow:0 8px 24px #0002"><button data-a="sign" class="block w-full text-left bg-transparent border-0 p-2">Sign in / Sign up</button><button data-a="theme" class="flex w-full items-center justify-between bg-transparent border-0 p-2"><span>Dark mode</span><i id="sw2"><b></b></i></button></div></div><a href="#bag" id="hb">Bag</a></div>
+    </div>
+  </header>
+  <div id="mega"></div>
+</div>
+<main id="app"></main>
+<footer class="px-5 lg:px-[60px] py-10 mt-16 text-sm" style="color:var(--mut);border-top:1px solid var(--ln)">© miskshi · dummy storefront · 30-day returns · Cash On Delivery</footer>
+
+<div id="sp"><div class="sc" data-a="sx"></div><aside>
+  <h2 id="st" class="text-[28px] font-bold m-0 mb-8">Sign in</h2>
+  <label class="text-sm" style="color:var(--mut)">Email</label><input id="se" class="fld" type="email" placeholder="you@email.com">
+  <label class="text-sm" style="color:var(--mut)">Password</label><input class="fld" type="password" placeholder="••••••••">
+  <button class="btn g w-full" style="height:52px" data-a="in">Sign in</button>
+  <p class="mt-5"><button id="sw" data-a="mode" class="bg-transparent border-0 p-0 underline">New here? Sign up</button></p>
+  <hr class="my-8" style="border:0;border-top:1px solid var(--ln)">
+  <button class="btn w-full" style="height:52px" data-a="guest">Or continue as guest</button>
+</aside></div>
+<div id="lk"></div>
+<div id="ts"></div>
+
+<script src="js/data.js"></script>
+<script src="js/views.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/lucky.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
